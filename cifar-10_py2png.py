@@ -31,7 +31,6 @@ def convetBatch(batch, dsFolder, batchFolder, textFile):
     batchPath = dsFolder + '/' + batchFolder
     print batchPath
     if not os.path.isdir(batchPath):
-        print 'aaaaaaa'
         os.makedirs(batchFolder)
 
     for j in xrange(0, batch['data'].shape[0]):

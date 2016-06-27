@@ -36,7 +36,7 @@ def convetBatch(batch, dsFolder, batchFolder, textFile):
     for j in xrange(0, batch['data'].shape[0]):
         im = array2im(batch['data'][j])
         imFile = batchPath + '/' + batch['filenames'][j]
-        cv2.imwrite(imFile, im)
+        cv2.imwrite(imFile, im, [cv2.IMWRITE_PNG_COMPRESSION, 0]) # cv2.IMWRITE_PNG_COMPRESSION = 0 -> no png compression
 
         imRelativePath =  batchFolder + '/' + batch['filenames'][j]
         textFile.write(imRelativePath + ' ' + str(batch['labels'][j]) + '\n')
